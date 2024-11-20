@@ -1,5 +1,18 @@
 import TaskCard from "./TaskCard";
 
+// Utility function to map priority levels to labels
+function getPriorityLabel(priority) {
+  const priorityMap = {
+    4: "Urgent",
+    3: "High",
+    2: "Medium",
+    1: "Low",
+    0: "No Priority",
+  };
+
+  return priorityMap[priority] || "Unknown Priority"; // Default for unexpected values
+}
+
 export default function Columns({
   tasks,
   users,
@@ -36,7 +49,11 @@ export default function Columns({
         >
           <div className="column-header">
             <div className="header-left">
-              <span className="status-name">{grouping === "priority" && 'Priority'} {group}</span>
+              <span className="status-name">
+                {grouping === "priority"
+                  ? getPriorityLabel(group) // Use the utility function for priority labels
+                  : group}
+              </span>
               <span className="task-count">{groupTasks.length}</span>
             </div>
           </div>
