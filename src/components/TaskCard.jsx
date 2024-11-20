@@ -55,7 +55,7 @@ export default function TaskCard({ task, handleDragStart, grouping, users }) {
       </div>
 
       <h3 className="task-title flex">
-        <Icon status={task.status} />
+        {grouping !== "status" && <Icon status={task.status} />}
         {task.title}
         {task.details && <p className="task-details">{task.details}</p>}
       </h3>
