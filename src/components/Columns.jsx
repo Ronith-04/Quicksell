@@ -30,7 +30,7 @@ function getPriorityDetails(priority) {
 function getStatusDetails(status) {
   const statusMap = {
     Backlog: { label: "Backlog", icon: backlog },
-    "To do": { label: "To Do", icon: todoIcon },
+    "Todo": { label: "To-Do", icon: todoIcon },
     "In progress": { label: "In Progress", icon: inProgressIcon },
     Done: { label: "Completed", icon: doneIcon },
     Canceled: { label: "Canceled", icon: canceledIcon },
