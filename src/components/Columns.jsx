@@ -11,6 +11,7 @@ import lowIcon from "../assets/icons/low.svg";
 import noPriorityIcon from "../assets/icons/no-priority.svg";
 
 import todoIcon from "../assets/icons/To-do.svg";
+import backlog from "../assets/icons/Backlog.svg";
 import inProgressIcon from "../assets/icons/in-progress.svg";
 import doneIcon from "../assets/icons/done.svg";
 import canceledIcon from "../assets/icons/Cancelled.svg";
@@ -28,7 +29,8 @@ function getPriorityDetails(priority) {
 
 function getStatusDetails(status) {
   const statusMap = {
-    Todo: { label: "To Do", icon: todoIcon },
+    Backlog: { label: "Backlog", icon: backlog },
+    "To do": { label: "To Do", icon: todoIcon },
     "In progress": { label: "In Progress", icon: inProgressIcon },
     Done: { label: "Completed", icon: doneIcon },
     Canceled: { label: "Canceled", icon: canceledIcon },
@@ -81,6 +83,7 @@ export default function Columns({
 }) {
   const groupedTasks = {
     status: {
+      Backlog:tasks.filter((t)=>t.status==="Backlog"),
       Todo: tasks.filter((t) => t.status === "Todo"),
       "In progress": tasks.filter((t) => t.status === "In progress"),
       Done: tasks.filter((t) => t.status === "Done"),
