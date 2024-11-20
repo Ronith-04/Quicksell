@@ -1,4 +1,5 @@
 import { capitalize } from "../utils";
+import displayIcon from "../assets/icons/Display.svg";
 
 export default function Navbar({
   displayMenuOpen,
@@ -16,6 +17,7 @@ export default function Navbar({
             className="nav-button"
             onClick={() => setDisplayMenuOpen(!displayMenuOpen)}
           >
+            <img src={displayIcon} alt="Display Icon" style={{ marginRight: "8px", width: "16px", height: "16px" }} /> {/* Icon added here */}
             <span>Display</span>
             <img src="down.svg" alt="Down" />
           </button>
